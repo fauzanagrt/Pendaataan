@@ -2,33 +2,40 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Pendataan Anggota PMII Rayon FTIK UNUSIA</title>
 
 <style>
 
-*{box-sizing:border-box;margin:0;padding:0;}
-
-body{
-font-family:'Segoe UI',sans-serif;
-background:#eef4ff;
-padding:15px;
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+-webkit-tap-highlight-color:transparent;
 }
 
+body{
+font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+background:#eef4ff;
+padding:env(safe-area-inset-top) 12px env(safe-area-inset-bottom);
+}
+
+/* CONTAINER */
 .container{
 width:100%;
-max-width:550px;
+max-width:520px;
 margin:auto;
 background:white;
-border-radius:18px;
-box-shadow:0 8px 25px rgba(0,0,0,0.08);
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
 overflow:hidden;
 margin-bottom:15px;
 }
 
+/* HEADER */
 .header{
 background:linear-gradient(135deg,#0b5ed7,#ffd400);
-padding:18px 15px;
+padding:22px 15px;
 text-align:center;
 color:white;
 }
@@ -38,61 +45,132 @@ display:flex;
 flex-wrap:wrap;
 justify-content:center;
 gap:10px;
-margin-bottom:10px;
+margin-bottom:12px;
 }
 
 .logo-area img{
-height:45px;
+height:44px;
 background:white;
-padding:4px;
-border-radius:8px;
+padding:5px;
+border-radius:10px;
 }
 
-h2{font-size:18px;line-height:1.4;}
+h2{
+font-size:18px;
+line-height:1.4;
+font-weight:600;
+}
 
-.form-area{padding:18px;}
+/* FORM */
+.form-area{
+padding:20px;
+}
 
 input,select{
 width:100%;
-padding:14px;
+padding:15px;
 margin:8px 0;
 border:2px solid #e2e8f0;
-border-radius:10px;
-font-size:15px;
+border-radius:12px;
+font-size:16px; /* penting untuk iPhone agar tidak zoom */
+background:#fafafa;
 }
 
 input:focus,select:focus{
 border-color:#0b5ed7;
+background:white;
 outline:none;
 }
 
-.preview{text-align:center;margin-top:10px;}
+/* FOTO PREVIEW */
+.preview{
+text-align:center;
+margin-top:10px;
+}
 
 .preview img{
-width:100%;
-max-width:130px;
-border-radius:12px;
+width:120px;
+height:120px;
+object-fit:cover;
+border-radius:15px;
 border:3px solid #ffd400;
 }
 
+/* BUTTON */
 button{
 width:100%;
-padding:15px;
-background:#0b5ed7;
+padding:16px;
+background:linear-gradient(135deg,#0b5ed7,#084298);
 color:white;
 border:none;
-border-radius:10px;
-font-size:16px;
-font-weight:bold;
-margin-top:10px;
+border-radius:14px;
+font-size:17px;
+font-weight:600;
+margin-top:12px;
 cursor:pointer;
+transition:0.2s;
 }
 
-button:active{transform:scale(0.97);}
+.ttd-area{
+margin-top:35px;
+padding-top:25px;
+border-top:2px solid #e2e8f0;
+text-align:center;
+}
 
+.ttd-title{
+font-weight:600;
+margin-bottom:25px;
+color:#1e293b;
+font-size:15px;
+letter-spacing:0.5px;
+}
+
+.ttd-wrapper{
+display:flex;
+justify-content:space-between;
+gap:20px;
+}
+
+.ttd-box{
+width:48%;
+text-align:center;
+font-size:14px;
+line-height:1.6;
+}
+
+.ttd-jabatan{
+font-weight:600;
+margin-bottom:5px;
+}
+
+.ttd-img{
+height:60px;
+margin:15px 0;
+object-fit:contain;
+}
+
+.ttd-nama{
+font-weight:700;
+text-decoration:underline;
+margin-top:5px;
+}
+
+.ttd-detail{
+font-size:13px;
+color:#475569;
+}
+
+
+
+button:active{
+transform:scale(0.96);
+}
+
+/* SUDAH ISI */
 .info-sudah{
 text-align:center;
-padding:20px;
+padding:25px;
 }
 
 .info-sudah h3{
@@ -100,36 +178,76 @@ margin-bottom:10px;
 color:#0b5ed7;
 }
 
+/* DESKTOP */
+@media(min-width:700px){
+h2{font-size:20px;}
+.logo-area img{height:52px;}
+}
+
+/* FOOTER */
+.footer{
+margin-top:20px;
+background:#0b5ed7;
+color:white;
+text-align:center;
+padding:20px 15px;
+border-radius:20px 20px 0 0;
+font-size:14px;
+line-height:1.6;
+}
+
+.footer small{
+display:block;
+margin-top:8px;
+opacity:0.9;
+font-size:12px;
+}
+
+
 </style>
 </head>
 
 <body>
 
-<!-- HALAMAN SUDAH ISI -->
+<!-- SUDAH ISI -->
 <div id="sudahIsi" style="display:none;">
 <div class="container">
 
 <div class="header">
-
 <div class="logo-area">
-<img src="logopmii.png">
-<img src="logopk.jpeg">
-<img src="logorayon.jpg">
-<img src="logokopri.jpeg">
+    <img src="logopmii.png">
+    <img src="logopk-baru.png">
+    <img src="logorayon.jpg">
+    <img src="logokopri-baru.jpg">
 </div>
-
 <h2>Data Anggota Sudah Terdaftar</h2>
-
 </div>
 
 <div class="info-sudah">
 
 <h3>Terima kasih 🙌</h3>
-<p>Anda sudah pernah mengisi pendataan anggota PMII Rayon FTIK UNUSIA.</p>
 
-<button onclick="hapusData()">Isi Ulang Data</button>
+<p style="margin-bottom:15px;">
+Anda sudah pernah mengisi pendataan anggota PMII Rayon FTIK UNUSIA.
+</p>
+
+<div style="
+background:#f1f5ff;
+padding:18px;
+border-radius:14px;
+font-style:italic;
+line-height:1.6;
+color:#0b5ed7;
+font-weight:500;
+">
+
+“BerPMII-lah sampai engkau paham bahwa dzikir, pikir, dan amal saleh
+bukan sekadar jargon, melainkan nafas perjuangan.”
 
 </div>
+
+</div>
+
 
 </div>
 </div>
@@ -138,51 +256,108 @@ color:#0b5ed7;
 <div class="container" id="formContainer">
 
 <div class="header">
-
 <div class="logo-area">
 <img src="logopmii.png">
-<img src="logopk.jpeg">
+<img src="logopk-baru.png">
 <img src="logorayon.jpg">
-<img src="logokopri.jpeg">
+<img src="logokopri-baru.jpg">
 </div>
-
-<h2>Pendataan Anggota PMII Rayon FTIK UNUSIA</h2>
-
+<h2>Pendataan Anggota PMII Rayon dan Kopri FTIK UNUSIA</h2>
 </div>
 
 <div class="form-area">
 
 <form id="form">
 
-<input name="nama" placeholder="Nama Lengkap" required>
-<input name="nim" placeholder="NIM" required>
-<input name="prodi" placeholder="Prodi" required>
-<input name="angkatan" placeholder="Angkatan" required>
-<input name="hp" placeholder="Nomor HP" required>
+<label>Nama Lengkap</label>
+<input name="nama" placeholder="Contoh: Ahmad Fajari" required>
 
+<label>Tempat, Tanggal Lahir</label>
+<input name="ttl" placeholder="Contoh: Jakarta, 12 Januari 2004" required>
+
+<label>NIM</label>
+<input name="nim" placeholder="Nomer Induk Mahasiswa" inputmode="numeric" required>
+
+<label>Program Studi</label>
+<input name="prodi" placeholder="Contoh: Teknik Informatika" required>
+
+<label>Angkatan</label>
+<input name="angkatan" placeholder="Contoh: 2024" inputmode="numeric" required>
+
+<label>Nomor HP</label>
+<input name="hp" placeholder="Contoh: 082..." inputmode="tel" required>
+
+<label>Status Pendidikan PMII</label>
 <select name="status" required>
-<option value="">-- Status Kaderisasi --</option>
+<option value="">-- Pilih Status --</option>
 <option>MAPABA</option>
 <option>PKD</option>
+<option>SIG</option>    
 </select>
 
-<input name="jabatan" placeholder="Jabatan Rayon (Opsional)">
-<input type="file" id="foto" accept="image/*" required>
+<label>Jabatan Rayon (Opsional)</label>
+<input name="jabatan">
+
+<label>Foto Anggota <span style="color:red;">*</span></label>
+<input type="file" id="foto" name="foto" accept="image/*" capture="environment" required>
 
 <div class="preview">
-<img id="preview" style="display:none;">
+    <img id="preview" style="display:none;">
 </div>
 
-<button type="submit">Kirim Data</button>
+<button type="submit">Kirim Data Anggota</button>
 
 </form>
 
+<div class="ttd-area">
+
+    <div class="ttd-title">Mengetahui,</div>
+
+    <div class="ttd-wrapper">
+
+        <!-- Ketua Rayon -->
+        <div class="ttd-box">
+            <div class="ttd-jabatan">Ketua Rayon</div>
+
+            <!-- Kalau punya gambar tanda tangan -->
+            <img src="ttdrayon.png" class="ttd-img">
+
+            <div class="ttd-nama">Ilham Maulana</div>
+            <div class="ttd-detail">NIM: 242600</div>
+            <div class="ttd-detail">Masa Khidmat: 2026-2027</div>
+        </div>
+
+        <!-- Ketua KOPRI -->
+        <div class="ttd-box">
+            <div class="ttd-jabatan">Ketua KOPRI</div>
+
+            <img src="tdkopri.png" class="ttd-img">
+
+            <div class="ttd-nama">Juwita Sara Safitri</div>
+            <div class="ttd-detail">NIM: 24260006</div>
+            <div class="ttd-detail">Masa Khidmat: 2026-2027</div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
 </div>
 </div>
+
+<div class="footer">
+    <small>
+        © 2026 PMII Rayon FTIK UNUSIA. All Rights Reserved.
+    </small>
+</div>
+
 
 <script>
 
-const scriptURL="https://script.google.com/macros/s/AKfycbws2o5FtvTqEyvtqeWJU_vkbXNIKvzOTynz-FQReif6r7PGVgHw9rmIENilM_AzyIbSMw/exec";
+const scriptURL="https://script.google.com/macros/s/AKfycbw_kjSXYtDb0pRzHk9Vct9vCSCYJ5BXrdtpPSFx13o-inbz7mMphTpIeGiZe-HCpv63TQ/exec";
 
 const form=document.getElementById("form");
 const preview=document.getElementById("preview");
@@ -206,13 +381,16 @@ form.addEventListener("submit",async function(e){
 
 e.preventDefault();
 
+const btn=form.querySelector("button");
+btn.innerText="Mengirim...";
+btn.disabled=true;
+
 const fileInput=document.getElementById("foto").files[0];
 const reader=new FileReader();
 
 reader.onload=async function(){
 
 const base64=reader.result.split(",")[1];
-
 const formData=new FormData(form);
 const data=Object.fromEntries(formData.entries());
 
@@ -224,11 +402,9 @@ method:"POST",
 body:JSON.stringify(data)
 });
 
-alert("Data anggota berhasil dikirim");
-
 localStorage.setItem("sudahIsiPMII","true");
 
-form.reset();
+alert("Data anggota berhasil dikirim");
 location.reload();
 
 };
